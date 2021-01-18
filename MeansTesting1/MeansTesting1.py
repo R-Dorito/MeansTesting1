@@ -31,7 +31,7 @@ def findMedian(listNum):
         location = (LISTLENGTH) / 2
         median = listNum[int(location)]
     else:
-        print("it's even")
+        #print("it's even")
         
         # Get the value of the first and second median number
         location1 = listNum[int((LISTLENGTH - 1) / 2)] 
@@ -45,6 +45,18 @@ def findMedian(listNum):
     print("the median is:", median)
     return median
 
+def findMode(listNum):
+    modeValue = 0
+    modeCount = 0
+    largerMode = 0
+    largerModeCount = 0
+
+    for i in listNum:
+
+    print("the mode is:", largerMode, "with:", largerModeCount)
+
+
+
 
     
 listNumbers = [1, 1, 2, 6, 6, 9 ]
@@ -52,5 +64,5 @@ defineList(listNumbers)
 
 
 #findMean(listNumbers)
-truncatedMean(listNumbers)
-findMedian(listNumbers)
+#truncatedMean(listNumbers)
+findMode(listNumbers)
