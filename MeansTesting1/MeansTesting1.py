@@ -46,42 +46,25 @@ def findMedian(listNum):
     return median
 
 def findMode(listNum):
-    modeValue = 0
-    modeCount = 0
-    largerMode = 0
-    largerModeCount = 0
-    
+    # This here collects all the unique values of a given list
     newList = list(dict.fromkeys(listNum))
 
+    numberDictionary = []
+
+    # This counts how many times a value appears in the list
     for i in newList:
-        print("i is currently:", i)
-        for j in listNum:
-            print("j is currently:", j)
-            if i == j:
-                print("i and j similar")
-                modeValue = i
-                modeCount =+ 1
-            else:
-                print("i and j not similar")
-                if modeValue >= largerMode:
-                    largerMode = modeValue
-                    largerModeCount = modeCount
-            print("large:", largerMode, ":", largerModeCount)
-            print()
-        modeValue = 0
-        modeCount = 0
-        #above code doesn't work
+        modeOccurances = listNum.count(i)
+        toAddToDictionary = {'Value': i, 'Count': modeOccurances}
+        numberDictionary.append(toAddToDictionary)
 
-    
-    print("the mode is:", largerMode, "with:", largerModeCount)
+    # Return the largest value
+
+    print(numberDictionary)
 
 
 
-
-    
-listNumbers = [1, 1, 2, 6, 6, 9 ]
+listNumbers = [1, 1, 2, 6, 6, 9, 9, 9 ]
 defineList(listNumbers)
-
 
 #findMean(listNumbers)
 #truncatedMean(listNumbers)
