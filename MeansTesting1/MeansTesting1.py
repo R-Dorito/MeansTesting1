@@ -49,6 +49,7 @@ def findMode(listNum):
     # This here collects all the unique values of a given list
     newList = list(dict.fromkeys(listNum))
 
+    # List of numbers and their frequencies
     numberDictionary = []
 
     # This counts how many times a value appears in the list
@@ -57,13 +58,26 @@ def findMode(listNum):
         toAddToDictionary = {'Value': i, 'Count': modeOccurances}
         numberDictionary.append(toAddToDictionary)
 
-    # Return the largest value
+    # Used to return the largest frequency
+    maxValue = 0
+    modeList = []
+    for itterable in numberDictionary:
+        currentValue = itterable['Count']
+        print("Current Value is:", currentValue)
+        if currentValue > maxValue:
+            maxValue = currentValue
+    print("Max Value is:", maxValue)
 
-    print(numberDictionary)
+    # Used to find all values with "Largest Frequencies"
+    for theMode in numberDictionary:
+        currentComparison = theMode['Count']
+        if maxValue == currentComparison:
+            modeList.append(theMode)
+    
+    print("There are", len(modeList), "Modes")
 
 
-
-listNumbers = [1, 1, 2, 6, 6, 9, 9, 9 ]
+listNumbers = [1, 3, 2, 6, 5, 9, 10]
 defineList(listNumbers)
 
 #findMean(listNumbers)
