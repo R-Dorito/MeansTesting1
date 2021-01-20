@@ -1,4 +1,4 @@
-class modeClass:
+class ModeClass:
 #Add class name
 # break the bottom part up
 # Introduce matplot
@@ -12,14 +12,14 @@ class modeClass:
         numberDictionary = []
 
         # This counts how many times a value appears in the list
-        for i in numbersList:
+        for i in uniqueDictionary:
             modeOccurances = numbersList.count(i)        
             numberDictionary.append({'Value': i, 'Count': modeOccurances})
         print(numberDictionary)
         return numberDictionary
 
     # Used to return the largest frequency
-    def getMaxFreq(dictionaryMode):
+    def getMaxFreq(dictionaryMode): 
         maxCount = 0
         for itterable in dictionaryMode:
             currentCount = itterable['Count']
