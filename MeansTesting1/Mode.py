@@ -1,29 +1,25 @@
-class Mode:
+class modeClass:
 #Add class name
 # break the bottom part up
 # Introduce matplot
 # Graphically draw this up
 
-    #This is a test Function
-    def findMode(listNum):
-        dictionaryMode = createModeDictionary(listNum)
-        frequency = returnMaxFrequency(dictionaryMode)
-        findAllModes(dictionaryMode, frequency)
-        
+
     # This here collects all the unique values of a given list
-    def createModeDictionary(listNum):       
+    def createModeDictionary(numbersList, uniqueDictionary):       
         #newList = list(dict.fromkeys(listNum))
         # List of numbers and their frequencies
         numberDictionary = []
 
         # This counts how many times a value appears in the list
-        for createCountList in UNIQUELIST:
-            modeOccurances = listNum.count(createCountList)        
-            numberDictionary.append({'Value': createCountList, 'Count': modeOccurances})
+        for i in numbersList:
+            modeOccurances = numbersList.count(i)        
+            numberDictionary.append({'Value': i, 'Count': modeOccurances})
+        print(numberDictionary)
         return numberDictionary
 
     # Used to return the largest frequency
-    def returnMaxFrequency(dictionaryMode):
+    def getMaxFreq(dictionaryMode):
         maxCount = 0
         for itterable in dictionaryMode:
             currentCount = itterable['Count']
@@ -37,11 +33,13 @@ class Mode:
     def findAllModes(dictionaryMode, frequency):
         modeList = []
         for currentValuesInDict in dictionaryMode:
-            currentComparison = allValuesInDict['Count']
+            currentComparison = currentValuesInDict['Count']
             if frequency == currentComparison:
                 modeList.append(currentValuesInDict)
         print("There is", len(modeList), "Mode(s)")
         return modeList
 
+   
+        
 
 

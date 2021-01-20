@@ -1,3 +1,4 @@
+from Mode import modeClass
 # This is a program that returns a Mean, Median, Mode, Standard Deviation a
 
 # Use this to define the properties of the list
@@ -51,9 +52,12 @@ def findMedian(listNum):
 
 
 
-listNumbers = [1, 3, 2, 3, 4, 4, 2, 2, 3]
+listNumbers = [1, 3, 2, 3, 4, 4, 2, 2, 3, 3]
 defineList(listNumbers)
 
-print(findMean(listNumbers))
+#print(findMean(listNumbers))
 #truncatedMean(listNumbers)
-findMode(listNumbers)
+dictionaryMode = modeClass.createModeDictionary(UNIQUELIST)
+frequency = modeClass.getMaxFreq(dictionaryMode)
+modes = modeClass.findAllModes(dictionaryMode, frequency)
+print(modes)
