@@ -6,8 +6,8 @@ class MeanClass:
         mean = sum / N
         return mean
 
-    def truncatedMean(listNum):
-        truncatedList = UNIQUELIST
+    def truncatedMean(listNum, uniqueList):
+        truncatedList = uniqueList
 
         # There needs to be at least 3 values to run the truncated mean
         # If there isn't, then return the list/

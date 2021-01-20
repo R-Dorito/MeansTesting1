@@ -4,7 +4,6 @@ class ModeClass:
 # Introduce matplot
 # Graphically draw this up
 
-
     # This here collects all the unique values of a given list
     def createModeDictionary(numbersList, uniqueDictionary):       
         #newList = list(dict.fromkeys(listNum))
@@ -19,10 +18,10 @@ class ModeClass:
         return numberDictionary
 
     # Used to return the largest frequency
-    def getMaxFreq(dictionaryMode): 
+    def getMaxFrequency(dictionaryMode): 
         maxCount = 0
-        for itterable in dictionaryMode:
-            currentCount = itterable['Count']
+        for i in dictionaryMode:
+            currentCount = i['Count']
             #print("Current Count is:", currentCount)
             if currentCount > maxCount:
                 maxCount = currentCount
@@ -32,10 +31,10 @@ class ModeClass:
     # Used to find all values with "Largest Frequencies"
     def findAllModes(dictionaryMode, frequency):
         modeList = []
-        for currentValuesInDict in dictionaryMode:
-            currentComparison = currentValuesInDict['Count']
+        for i in dictionaryMode:
+            currentComparison = i['Count']
             if frequency == currentComparison:
-                modeList.append(currentValuesInDict)
+                modeList.append(i)
         print("There is", len(modeList), "Mode(s)")
         return modeList
 

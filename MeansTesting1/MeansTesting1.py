@@ -1,5 +1,10 @@
 from Mode import ModeClass
 from Mean import MeanClass
+from Median import MedianClass
+from DrawMode import DrawModeClass
+from numpy import random
+
+
 # This is a program that returns a Mean, Median, Mode, Standard Deviation a
 
 # Use this to define the properties of the list
@@ -15,12 +20,19 @@ def defineList(listNum):
 
 
 # Test
-listNumbers = [1, 3, 2, 3, 4, 4, 2, 2, 2, 3, 3]
+listNumbers = []
+i = 0
+while i <= 20:
+    listNumbers.append(random.randint(6))
+    i += 1
+
 defineList(listNumbers)
 
 #print(findMean(listNumbers))
 #truncatedMean(listNumbers)
 dictionaryMode = ModeClass.createModeDictionary(listNumbers, UNIQUELIST)
-frequency = ModeClass.getMaxFreq(dictionaryMode)
+frequency = ModeClass.getMaxFrequency(dictionaryMode)
 modes = ModeClass.findAllModes(dictionaryMode, frequency)
-print(modes)
+#print(modes)
+
+DrawModeClass.drawModeGraph(dictionaryMode)
