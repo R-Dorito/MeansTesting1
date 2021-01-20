@@ -1,7 +1,7 @@
 from Mode import ModeClass
 from Mean import MeanClass
 from Median import MedianClass
-from DrawMode import DrawModeClass
+from StandardDeviation import StandardDeviationClass
 from numpy import random
 
 
@@ -22,8 +22,8 @@ def defineList(listNum):
 # Test
 listNumbers = []
 i = 0
-while i <= 20:
-    listNumbers.append(random.randint(6))
+while i <= 10:
+    listNumbers.append(random.randint(1, 7))
     i += 1
 
 defineList(listNumbers)
@@ -35,4 +35,7 @@ frequency = ModeClass.getMaxFrequency(dictionaryMode)
 modes = ModeClass.findAllModes(dictionaryMode, frequency)
 #print(modes)
 
-DrawModeClass.drawModeGraph(dictionaryMode)
+#ModeClass.drawModeGraph(dictionaryMode)
+
+mean = MeanClass.findMean(N, listNumbers)
+StandardDeviationClass.sampleSD(N, mean, listNumbers)

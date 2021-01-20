@@ -1,9 +1,9 @@
 class MeanClass:
-    def findMean(listNum):
+    def findMean(numItems, listNum):
         sum = 0
         for i in listNum:
             sum += i
-        mean = sum / N
+        mean = sum / numItems
         return mean
 
     def truncatedMean(listNum, uniqueList):

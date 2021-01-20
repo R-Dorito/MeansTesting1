@@ -21,7 +21,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="DrawMode.py">
+    <Compile Include="StandardDeviation.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Median.py">
