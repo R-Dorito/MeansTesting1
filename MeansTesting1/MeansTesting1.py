@@ -1,7 +1,9 @@
 from Mode import ModeClass
 from Mean import MeanClass
 from Median import MedianClass
+from StandardDeviation import SDType
 from StandardDeviation import StandardDeviationClass
+
 from numpy import random
 
 
@@ -13,11 +15,9 @@ def defineList(listNum):
     global N 
     global UNIQUELIST
 
-    listNum.sort()
     N = len(listNum)
-
     UNIQUELIST = list(dict.fromkeys(listNum))
-
+    UNIQUELIST.sort()
 
 # Test
 listNumbers = []
@@ -38,4 +38,6 @@ modes = ModeClass.findAllModes(dictionaryMode, frequency)
 #ModeClass.drawModeGraph(dictionaryMode)
 
 mean = MeanClass.findMean(N, listNumbers)
-StandardDeviationClass.sampleSD(N, mean, listNumbers)
+print(listNumbers)
+StandardDeviationClass.standardDeviation(N, mean, listNumbers, SDType.SAMPLE)
+StandardDeviationClass.standardDeviation(N, mean, listNumbers, SDType.POPULATION)
