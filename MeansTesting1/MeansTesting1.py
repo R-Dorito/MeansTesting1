@@ -1,8 +1,12 @@
+# This is a program that returns a Mean, Median, Mode, Standard Deviation a
+
 # Use this to define the properties of the list
 def defineList(listNum):
     global LISTLENGTH 
+    global UNIQUELIST
     listNum.sort()
     LISTLENGTH = len(listNum)
+    UNIQUELIST = list(dict.fromkeys(listNum))
 
 def findMean(listNum):
     sum = 0
@@ -12,9 +16,11 @@ def findMean(listNum):
     return average
 
 def truncatedMean(listNum):
-    newList = list(dict.fromkeys(listNum))
-    del newList[len(newList) - 1]
-    del newList[0]
+    #newList = list(dict.fromkeys(listNum))
+
+    if len(UNIQUELIST) >= 3:
+        del UNIQUELIST[len(newList) - 1]
+        del UNIQUELIST[0]
     return newList
 
 def findMedian(listNum):
@@ -24,15 +30,13 @@ def findMedian(listNum):
     # else do: ((x[n/2] + x[(n+1)/2])/2)
 
     if (LISTLENGTH % 2) != 0:
-        print("its odd")
-
+        #print("its odd")
         # Although the formula states the n+1/2 should be done, 
         # it does not work well in this case
         location = (LISTLENGTH) / 2
         median = listNum[int(location)]
     else:
         #print("it's even")
-        
         # Get the value of the first and second median number
         location1 = listNum[int((LISTLENGTH - 1) / 2)] 
         #print("L1:", location1, "at:",int((LISTLENGTH) / 2))
@@ -45,41 +49,11 @@ def findMedian(listNum):
     print("the median is:", median)
     return median
 
-def findMode(listNum):
-    # This here collects all the unique values of a given list
-    newList = list(dict.fromkeys(listNum))
-
-    # List of numbers and their frequencies
-    numberDictionary = []
-
-    # This counts how many times a value appears in the list
-    for i in newList:
-        modeOccurances = listNum.count(i)
-        toAddToDictionary = {'Value': i, 'Count': modeOccurances}
-        numberDictionary.append(toAddToDictionary)
-
-    # Used to return the largest frequency
-    maxValue = 0
-    modeList = []
-    for itterable in numberDictionary:
-        currentValue = itterable['Count']
-        print("Current Value is:", currentValue)
-        if currentValue > maxValue:
-            maxValue = currentValue
-    print("Max Value is:", maxValue)
-
-    # Used to find all values with "Largest Frequencies"
-    for theMode in numberDictionary:
-        currentComparison = theMode['Count']
-        if maxValue == currentComparison:
-            modeList.append(theMode)
-    
-    print("There are", len(modeList), "Modes")
 
 
-listNumbers = [1, 3, 2, 6, 5, 9, 10]
+listNumbers = [1, 3, 2, 3, 4, 4, 2, 2, 3]
 defineList(listNumbers)
 
-#findMean(listNumbers)
+print(findMean(listNumbers))
 #truncatedMean(listNumbers)
 findMode(listNumbers)
