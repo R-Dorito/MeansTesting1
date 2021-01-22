@@ -20,20 +20,17 @@ class ModeClass:
         print(numberDictionary)
         return numberDictionary
 
-    # Used to return the largest frequency
-    def getMaxFrequency(dictionaryMode): 
-        maxCount = 0
+    # Used to find all values with "Largest Frequencies"
+    def returnListOfModes(dictionaryMode):
+        modeList = []
+        frequency = 0
         for i in dictionaryMode:
             currentCount = i['Count']
             #print("Current Count is:", currentCount)
-            if currentCount > maxCount:
-                maxCount = currentCount
-        print("Max Value is:", maxCount)
-        return maxCount
+            if currentCount > frequency:
+                frequency = currentCount
+        print("Max Value is:", frequency)
 
-    # Used to find all values with "Largest Frequencies"
-    def findAllModes(dictionaryMode, frequency):
-        modeList = []
         for i in dictionaryMode:
             currentComparison = i['Count']
             if frequency == currentComparison:
