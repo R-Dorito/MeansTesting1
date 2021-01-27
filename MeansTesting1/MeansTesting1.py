@@ -45,11 +45,5 @@ import tkinter as tk
 window = tk.Tk()
 window.title('Plotting in Tkinter')
 
-plot_button = Button(master = window, 
-                    height = 2, 
-                    width = 10, 
-                text = "Plot") 
-plot_button.pack() 
-  
 # run the gui 
 window.mainloop()
